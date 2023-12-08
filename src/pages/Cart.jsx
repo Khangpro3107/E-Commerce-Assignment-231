@@ -86,7 +86,6 @@ const Cart = () => {
                               >
                                 <img
                                   src={item.image}
-                                  // className="w-100"
                                   alt={item.title}
                                   width={100}
                                   height={75}
@@ -98,8 +97,6 @@ const Cart = () => {
                               <p>
                                 <strong>{item.title}</strong>
                               </p>
-                              {/* <p>Color: blue</p>
-                              <p>Size: M</p> */}
                             </div>
 
                             <div className="col-lg-4 col-md-6">
