@@ -13,11 +13,15 @@ const Home = () => {
           />
           <div className="card-img-overlay d-flex align-items-center">
             <div className="container">
-              <h5 className="card-title fs-1 text fw-lighter">New Season Arrivals</h5>
+              <h5 className="card-title fs-1 text fw-lighter">
+                New Season Arrivals
+              </h5>
               <p className="card-text fs-5 d-none d-sm-block ">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                Introducing our New Season Arrivals: Get ready to embark on your
+                next journey with the latest travel gadgets designed to enhance
+                your travel experience. Discover innovative and practical
+                solutions for hassle-free exploration. Upgrade your adventures
+                with our new arrivals.
               </p>
             </div>
           </div>

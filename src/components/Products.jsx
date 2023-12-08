@@ -1,16 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
-
+import products from "../data/products.json";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
 import { Link } from "react-router-dom";
+import { formatPrice } from "../utils";
 
 const Products = () => {
   const [data, setData] = useState([]);
-  const [filter, setFilter] = useState(data);
+  const [filtering, setFiltering] = useState(data);
   const [loading, setLoading] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const filterOptions = [
+    {
+      text: "All",
+      filter: "all",
+    },
+    {
+      text: "Men's clothing",
+      filter: "men's clothing",
+    },
+    {
+      text: "Women's clothing",
+      filter: "women's clothing",
+    },
+    {
+      text: "Footwear",
+      filter: "footwear",
+    },
+    {
+      text: "Accessories",
+      filter: "accessories",
+    },
+  ];
   let componentMounted = true;
 
   const dispatch = useDispatch();
@@ -20,13 +43,14 @@ const Products = () => {
   };
 
   useEffect(() => {
-    const getProducts = async () => {
+    const getProducts = () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
       if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
-        setLoading(false);
+        setTimeout(() => {
+          setData(products.products);
+          setFiltering(products.products);
+          setLoading(false);
+        }, 500);
       }
 
       return () => {
@@ -65,47 +89,34 @@ const Products = () => {
     );
   };
 
-  const filterProduct = (cat) => {
+  const filteringProduct = (cat) => {
     const updatedList = data.filter((item) => item.category === cat);
-    setFilter(updatedList);
+    setFiltering(updatedList);
   };
   const ShowProducts = () => {
     return (
       <>
         <div className="buttons text-center py-5">
-          <button
-            className="btn btn-outline-dark btn-sm m-2"
-            onClick={() => setFilter(data)}
-          >
-            All
-          </button>
-          <button
-            className="btn btn-outline-dark btn-sm m-2"
-            onClick={() => filterProduct("men's clothing")}
-          >
-            Men's Clothing
-          </button>
-          <button
-            className="btn btn-outline-dark btn-sm m-2"
-            onClick={() => filterProduct("women's clothing")}
-          >
-            Women's Clothing
-          </button>
-          <button
-            className="btn btn-outline-dark btn-sm m-2"
-            onClick={() => filterProduct("jewelery")}
-          >
-            Jewelery
-          </button>
-          <button
-            className="btn btn-outline-dark btn-sm m-2"
-            onClick={() => filterProduct("electronics")}
-          >
-            Electronics
-          </button>
+          {filterOptions.map((option) => (
+            <button
+              className={
+                "btn btn-sm m-2 " +
+                (selectedCategory === option.filter
+                  ? "btn-primary"
+                  : "btn-outline-primary")
+              }
+              onClick={() => {
+                if (option.filter === "all") setFiltering(data);
+                else filteringProduct(option.filter);
+                setSelectedCategory(option.filter);
+              }}
+              key={option.filter}
+            >
+              {option.text}
+            </button>
+          ))}
         </div>
-
-        {filter.map((product) => {
+        {filtering.map((product) => {
           return (
             <div
               id={product.id}
@@ -113,37 +124,40 @@ const Products = () => {
               className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4"
             >
               <div className="card text-center h-100" key={product.id}>
-                <img
-                  className="card-img-top p-3"
-                  src={product.image}
-                  alt="Card"
-                  height={300}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">
-                    {product.title.substring(0, 12)}...
-                  </h5>
-                  <p className="card-text">
-                    {product.description.substring(0, 90)}...
-                  </p>
-                </div>
+                <Link
+                  to={"/product/" + product.id}
+                  className="text-decoration-none text-dark"
+                >
+                  <img
+                    className="card-img-top p-3 object-fit-fill"
+                    src={product.image}
+                    alt="Card"
+                    height={400}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">
+                      {product.description.substring(0, 90)}...
+                    </p>
+                  </div>
+                </Link>
                 <ul className="list-group list-group-flush">
-                  <li className="list-group-item lead">$ {product.price}</li>
-                  {/* <li className="list-group-item">Dapibus ac facilisis in</li>
-                    <li className="list-group-item">Vestibulum at eros</li> */}
+                  <li className="list-group-item lead">
+                    {formatPrice(product.price)}đ
+                  </li>
                 </ul>
                 <div className="card-body">
                   <Link
                     to={"/product/" + product.id}
-                    className="btn btn-dark m-1"
+                    className="btn btn-primary m-1"
                   >
-                    Buy Now
+                    <i className="fa fa-info-circle"></i> View
                   </Link>
                   <button
-                    className="btn btn-dark m-1"
+                    className="btn btn-primary-2 m-1"
                     onClick={() => addProduct(product)}
                   >
-                    Add to Cart
+                    <i className="fa fa-plus-circle"></i> Add to Cart
                   </button>
                 </div>
               </div>

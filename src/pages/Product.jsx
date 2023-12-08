@@ -4,16 +4,16 @@ import { Link, useParams } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
-
+import products from "../data/products.json";
 import { Footer, Navbar } from "../components";
+import { formatPrice } from "../utils";
 
 const Product = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
   const [similarProducts, setSimilarProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
-
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
@@ -21,22 +21,23 @@ const Product = () => {
   };
 
   useEffect(() => {
-    const getProduct = async () => {
+    const getProduct = () => {
       setLoading(true);
       setLoading2(true);
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const data = await response.json();
-      setProduct(data);
-      setLoading(false);
-      const response2 = await fetch(
-        `https://fakestoreapi.com/products/category/${data.category}`
-      );
-      const data2 = await response2.json();
-      setSimilarProducts(data2);
-      setLoading2(false);
+      setTimeout(() => {
+        setProduct(products.products.filter((prod) => prod.id === id)[0]);
+        setLoading(false);
+      }, 500);
+      setTimeout(() => {
+        setSimilarProducts(
+          products.products.filter((prod) => prod.category === product.category)
+        );
+        setLoading2(false);
+      }, 750);
     };
     getProduct();
-  }, [id]);
+    window.scrollTo(0, 0);
+  }, [id, product.category]);
 
   const Loading = () => {
     return (
@@ -82,16 +83,16 @@ const Product = () => {
                 {product.rating && product.rating.rate}{" "}
                 <i className="fa fa-star"></i>
               </p>
-              <h3 className="display-6  my-4">${product.price}</h3>
+              <h3 className="display-6 my-4">{formatPrice(product.price)}đ</h3>
               <p className="lead">{product.description}</p>
               <button
-                className="btn btn-outline-dark"
+                className="btn btn-outline-primary-2"
                 onClick={() => addProduct(product)}
               >
-                Add to Cart
+                <i className="fa fa-plus-circle"></i> Add to Cart
               </button>
-              <Link to="/cart" className="btn btn-dark mx-3">
-                Go to Cart
+              <Link to="/cart" className="btn btn-primary mx-3">
+                <i className="fa fa-shopping-cart"></i> Go to Cart
               </Link>
             </div>
           </div>
@@ -143,21 +144,23 @@ const Product = () => {
                       {item.title.substring(0, 15)}...
                     </h5>
                   </div>
-                  {/* <ul className="list-group list-group-flush">
-                    <li className="list-group-item lead">${product.price}</li>
-                  </ul> */}
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item lead">
+                      {formatPrice(product.price)}đ
+                    </li>
+                  </ul>
                   <div className="card-body">
                     <Link
                       to={"/product/" + item.id}
-                      className="btn btn-dark m-1"
+                      className="btn btn-primary m-1"
                     >
-                      Buy Now
+                      <i className="fa fa-info-circle"></i> View
                     </Link>
                     <button
-                      className="btn btn-dark m-1"
+                      className="btn btn-primary-2 m-1"
                       onClick={() => addProduct(item)}
                     >
-                      Add to Cart
+                      <i className="fa fa-plus-circle"></i> Add to Cart
                     </button>
                   </div>
                 </div>
@@ -175,12 +178,8 @@ const Product = () => {
         <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
         <div className="row my-5 py-5">
           <div className="d-none d-md-block">
-          <h2 className="">You may also Like</h2>
-            <Marquee
-              pauseOnHover={true}
-              pauseOnClick={true}
-              speed={50}
-            >
+            <h2 className="">You may also Like</h2>
+            <Marquee pauseOnHover={true} pauseOnClick={true} speed={50}>
               {loading2 ? <Loading2 /> : <ShowSimilarProduct />}
             </Marquee>
           </div>

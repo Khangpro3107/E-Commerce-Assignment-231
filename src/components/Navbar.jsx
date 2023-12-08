@@ -1,9 +1,24 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const state = useSelector((state) => state.handleCart);
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    setUser(user);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    localStorage.setItem("cart", JSON.stringify(state));
+    window.location.href = "/";
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top">
       <div className="container">
@@ -46,16 +61,36 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="buttons text-center">
-            <NavLink to="/login" className="btn btn-outline-primary m-2">
-              <i className="fa fa-sign-in-alt mr-1"></i> Login
-            </NavLink>
-            <NavLink to="/register" className="btn btn-outline-primary m-2">
-              <i className="fa fa-user-plus mr-1"></i> Register
-            </NavLink>
-            <NavLink to="/cart" className="btn btn-outline-warning m-2">
-              <i className="fa fa-cart-shopping mr-1"></i> Cart ({state.length}){" "}
-            </NavLink>
+            {!user && (
+              <>
+                <NavLink to="/login" className="btn btn-outline-primary m-2">
+                  <i className="fa fa-sign-in-alt mr-1"></i> Login
+                </NavLink>
+                <NavLink to="/register" className="btn btn-outline-primary m-2">
+                  <i className="fa fa-user-plus mr-1"></i> Register
+                </NavLink>
+              </>
+            )}
+            {user && (
+              <Link to="/cart" className="btn btn-outline-primary-2 m-2">
+                <i className="fa fa-cart-shopping mr-1"></i> Cart (
+                {state.length}){" "}
+              </Link>
+            )}
           </div>
+          {user && (
+            <>
+              <div className="text-light">
+                Hello <b>{user.name}</b>!
+              </div>
+              <NavLink
+                className="text-decoration-underline text-info ms-2 pe-auto"
+                onClick={() => handleLogout()}
+              >
+                Logout
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </nav>
