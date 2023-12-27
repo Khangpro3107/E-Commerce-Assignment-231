@@ -9,7 +9,7 @@
         "rate": 3.7
       },
       "category": "men's clothing",
-      "image": "/assets/products/T-shirt.png"
+      "image": "https://i.ibb.co/47pcjdY/T-shirt.png"
     },
     {
       "id": "2",
@@ -20,7 +20,7 @@
         "rate": 4.5
       },
       "category": "men's clothing",
-      "image": "/assets/products/Jeans.png"
+      "image": "https://i.ibb.co/m8n58qY/Jeans.png"
     },
     {
       "id": "3",
@@ -31,7 +31,7 @@
         "rate": 5.0
       },
       "category": "men's clothing",
-      "image": "/assets/products/Ao-gio.png"
+      "image": "https://i.ibb.co/wNrmFMV/Ao-gio.png"
     },
     {
       "id": "4",
@@ -42,7 +42,7 @@
         "rate": 4.1
       },
       "category": "women's clothing",
-      "image": "/assets/products/Ao-cardigan.png"
+      "image": "https://i.ibb.co/WVHc8j8/Ao-cardigan.png"
     },
     {
       "id": "5",
@@ -53,7 +53,7 @@
         "rate": 3.2
       },
       "category": "women's clothing",
-      "image": "/assets/products/Chan-vay.png"
+      "image": "https://i.ibb.co/m4418PT/Chan-vay.png"
     },
     {
       "id": "6",
@@ -64,7 +64,7 @@
         "rate": 3.8
       },
       "category": "women's clothing",
-      "image": "/assets/products/hoodle-nu.png"
+      "image": "https://i.ibb.co/Tg9WxQF/hoodle-nu.png"
     },
     {
       "id": "7",
@@ -75,7 +75,7 @@
         "rate": 4.8
       },
       "category": "accessories",
-      "image": "/assets/products/Tui-deo-cheo.png"
+      "image": "https://i.ibb.co/d4krCD8/Tui-deo-cheo.png"
     },
     {
       "id": "8",
@@ -86,7 +86,7 @@
         "rate": 4.4
       },
       "category": "accessories",
-      "image": "/assets/products/non-luoi-trai.png"
+      "image": "https://i.ibb.co/37Ztnv8/non-luoi-trai.png"
     },
     {
       "id": "9",
@@ -97,7 +97,7 @@
         "rate": 4.2
       },
       "category": "accessories",
-      "image": "/assets/products/kinh-ram.png"
+      "image": "https://i.ibb.co/BLgQpGw/kinh-ram.png"
     },
     {
       "id": "10",
@@ -108,7 +108,7 @@
         "rate": 3.9
       },
       "category": "accessories",
-      "image": "/assets/products/kem-chong-nang.png"
+      "image": "https://i.ibb.co/Gd3wn7c/kem-chong-nang.png"
     },
     {
       "id": "11",
@@ -119,7 +119,7 @@
         "rate": 3.1
       },
       "category": "accessories",
-      "image": "/assets/products/goi-ke-dau.png"
+      "image": "https://i.ibb.co/MPHRnq5/goi-ke-dau.png"
     },
     {
       "id": "12",
@@ -130,7 +130,7 @@
         "rate": 3.4
       },
       "category": "accessories",
-      "image": "/assets/products/black-suitcase.png"
+      "image": "https://i.ibb.co/BrNV00B/black-suitcase.png"
     },
     {
       "id": "13",
@@ -141,7 +141,7 @@
         "rate": 3.8
       },
       "category": "men's clothing",
-      "image": "/assets/products/casual-t-shirt.jpg"
+      "image": "https://i.ibb.co/9vWz9bc/casual-t-shirt.jpg"
     },
     {
       "id": "14",
@@ -152,7 +152,7 @@
         "rate": 4.9
       },
       "category": "women's clothing",
-      "image": "/assets/products/moto-jacket.jpg"
+      "image": "https://i.ibb.co/7gtydMR/moto-jacket.jpg"
     },
     {
       "id": "15",
@@ -163,7 +163,7 @@
         "rate": 4.6
       },
       "category": "women's clothing",
-      "image": "/assets/products/casual-women.jpg"
+      "image": "https://i.ibb.co/Cvy2tYS/casual-women.jpg"
     },
     {
       "id": "16",
@@ -174,7 +174,7 @@
         "rate": 4.3
       },
       "category": "accessories",
-      "image": "/assets/products/women-sunglasses.png"
+      "image": "https://i.ibb.co/BrCf0Sg/women-sunglasses.png"
     },
     {
       "id": "17",
@@ -185,7 +185,7 @@
         "rate": 4.4
       },
       "category": "footwear",
-      "image": "/assets/products/men-sport-shoes.jpg"
+      "image": "https://i.ibb.co/0GrjYYK/men-sport-shoes.jpg"
     },
     {
       "id": "18",
@@ -196,7 +196,7 @@
         "rate": 4.6
       },
       "category": "footwear",
-      "image": "/assets/products/women-sport-shoes.jpg"
+      "image": "https://i.ibb.co/2qKj3Wj/women-sport-shoes.jpg"
     },
     {
       "id": "19",
@@ -207,7 +207,7 @@
         "rate": 3.0
       },
       "category": "footwear",
-      "image": "/assets/products/beach-slipper.jpg"
+      "image": "https://i.ibb.co/Vmwyx0y/beach-slipper.jpg"
     }
   ]
 }

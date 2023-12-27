@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../components";
 import products from "../data/products.json";
 import { formatPrice } from "../utils";
-import { PayPalButton } from 'react-paypal-button-v2'
+import { PayPalButton } from 'react-paypal-button-v2';
 
 const Checkout = () => {
   const stateCountry = "";
@@ -45,8 +45,8 @@ const Checkout = () => {
     );
   };
 
-  const handleCheckout = async (e) => {
-    e.preventDefault();
+  const handleCheckout = async (name) => {
+    // e.preventDefault();
     const token = localStorage.getItem('token');
     const listProduct = [];
     state.map((prod) => {
@@ -65,10 +65,6 @@ const Checkout = () => {
       country: document.getElementById('country').value,
       state: stateCountry,
       zip: document.getElementById('zip').value,
-      nameCard: document.getElementById('cc-name').value,
-      creditCardNum: document.getElementById('cc-number').value,
-      expiration: document.getElementById('cc-expiration').value,
-      cvv: document.getElementById('cc-cvv').value,
       listProduct
     }
     await axios.post('http://localhost:3001/bill/create', data, {
@@ -78,6 +74,8 @@ const Checkout = () => {
     });
     localStorage.setItem("cart", "");
     window.location.href = "/";
+    
+    alert("Transaction completed by " + name);
   }
 
   const ShowCheckout = () => {
@@ -130,7 +128,7 @@ const Checkout = () => {
                   <h4 className="mb-0">Billing address</h4>
                 </div>
                 <div className="card-body">
-                  <form className="needs-validation" noValidate onSubmit={handleCheckout}>
+                  <form className="needs-validation" onSubmit={handleCheckout}>
                     <div className="row g-3">
                       <div className="col-sm-6 my-1">
                         <label htmlFor="firstName" className="form-label">
@@ -255,11 +253,11 @@ const Checkout = () => {
                       </div>
                     </div>
 
-                    <hr className="my-4" />
+                    {/* <hr className="my-4" /> */}
 
-                    <h4 className="mb-3">Payment</h4>
+                    {/* <h4 className="mb-3">Payment</h4> */}
 
-                    <div className="row gy-3">
+                    {/* <div className="row gy-3">
                       <div className="col-md-6">
                         <label htmlFor="cc-name" className="form-label">
                           Name on card
@@ -326,13 +324,31 @@ const Checkout = () => {
                           Security code required
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                     <hr className="my-4" />
 
-                    <button className="w-100 btn btn-primary " type="submit">
+                    {/* <button className="w-100 btn btn-primary " type="submit">
                       Continue to checkout
-                    </button>
+                    </button> */}
+                    <PayPalButton
+                      style={{
+                        disableMaxWidth: true
+                      }}
+                      amount={Math.ceil((subtotal + shipping)/24360)}
+                      // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                      onSuccess={(details, data) => {
+                        handleCheckout(details.payer.name.given_name);
+
+                        // OPTIONAL: Call your server to save the transaction
+                        return fetch("/paypal-transaction-complete", {
+                          method: "post",
+                          body: JSON.stringify({
+                            orderID: data.orderID
+                          })
+                        });
+                      }}
+                    />
                   </form>
                 </div>
               </div>
