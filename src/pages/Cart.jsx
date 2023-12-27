@@ -1,12 +1,10 @@
-import React from "react";
-import { Footer, Navbar } from "../components";
-import { useSelector, useDispatch } from "react-redux";
-import { addCart, delCart } from "../redux/action";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { formatPrice } from "../utils";
+import { Footer, Navbar } from "../components";
 import products from "../data/products.json";
-import { useEffect } from "react";
-import { useState } from "react";
+import { addCart, delCart } from "../redux/action";
+import { formatPrice } from "../utils";
 
 const Cart = () => {
   const state = useSelector((state) => state.handleCart);
@@ -146,7 +144,7 @@ const Cart = () => {
                   <div className="card-header py-3 bg-light">
                     <h5 className="mb-0">Order Summary</h5>
                   </div>
-                  <div className="card-body">
+                  <div className="card-body d-flex flex-column items-center">
                     <ul className="list-group list-group-flush">
                       <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                         Products ({totalItems})
@@ -168,13 +166,18 @@ const Cart = () => {
                       </li>
                     </ul>
 
-                    <Link
-                      to="/checkout"
-                      className="btn btn-primary-2 btn-lg btn-block"
-                    >
-                      <i className="fa fa-arrow-circle-right"></i> Go to
-                      checkout
-                    </Link>
+                    {
+                      localStorage.getItem('user') ?
+                      <Link
+                        to="/checkout"
+                        className="btn btn-primary-2 btn-lg btn-block"
+                      >
+                        <i className="fa fa-arrow-circle-right"></i> Go to
+                        checkout
+                      </Link>
+                      :
+                      <></>
+                    }
                   </div>
                 </div>
               </div>
