@@ -64,10 +64,12 @@ const Checkout = () => {
       address2: document.getElementById('address2').value,
       country: document.getElementById('country').value,
       state: stateCountry,
+      nameCard: 'Nghi123456',
+      creditCardNum: '123456789',
       zip: document.getElementById('zip').value,
       listProduct
     }
-    await axios.post('http://localhost:3001/bill/create', data, {
+    await axios.post('https://mudiem-be.onrender.com/bill/create', data, {
       headers: {
         Authorization: `Bearer ${token}`,
       }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import '../css/Table.css';
 import { formatPrice } from '../utils';
@@ -13,7 +12,7 @@ function CollapsibleTable() {
     const token = localStorage.getItem('token');
     const getList = async () => {
       setLoading(true);
-      const res = await axios.get('http://localhost:3001/bill/getList', {
+      const res = await axios.get('https://mudiem-be.onrender.com/bill/getList', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
