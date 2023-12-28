@@ -1,0 +1,213 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Men's white t-shirt",
+      "price": 215000,
+      "description": "A timeless essential that effortlessly combines style, comfort, and versatility for any occasion",
+      "rating": {
+        "rate": 3.7
+      },
+      "category": "men's clothing",
+      "image": "https://i.ibb.co/47pcjdY/T-shirt.png"
+    },
+    {
+      "id": "2",
+      "title": "Jeans basic Slim DABJ004",
+      "price": 849000,
+      "description": "A stylish and versatile pair of jeans with a slim fit design, combining comfort and contemporary fashion effortlessly. Elevate your everyday style with this wardrobe essential.",
+      "rating": {
+        "rate": 4.5
+      },
+      "category": "men's clothing",
+      "image": "https://i.ibb.co/m8n58qY/Jeans.png"
+    },
+    {
+      "id": "3",
+      "title": "Sun protection windbreaker",
+      "price": 315000,
+      "description": "The shirt is designed to be youthful and dynamic, with bright white color, especially good at protecting against UV rays.",
+      "rating": {
+        "rate": 5.0
+      },
+      "category": "men's clothing",
+      "image": "https://i.ibb.co/wNrmFMV/Ao-gio.png"
+    },
+    {
+      "id": "4",
+      "title": "CANIFA women's cardigan",
+      "price": 399000,
+      "description": "CANIFA women's cardigan is designed with a long-sleeved, short-medium V-neck",
+      "rating": {
+        "rate": 4.1
+      },
+      "category": "women's clothing",
+      "image": "https://i.ibb.co/WVHc8j8/Ao-cardigan.png"
+    },
+    {
+      "id": "5",
+      "title": "The Basic 3-layer skirt",
+      "price": 490000,
+      "description": "The Basic skirt is designed to be near the ankle length, has a 3-layered skirt, and has a slightly flared, feminine shape",
+      "rating": {
+        "rate": 3.2
+      },
+      "category": "women's clothing",
+      "image": "https://i.ibb.co/m4418PT/Chan-vay.png"
+    },
+    {
+      "id": "6",
+      "title": "Women's hoodie",
+      "price": 499000,
+      "description": "Loose fleece pullover with drawstring hood, interior lining, kangaroo pockets and ribbed cuffs and hem.",
+      "rating": {
+        "rate": 3.8
+      },
+      "category": "women's clothing",
+      "image": "https://i.ibb.co/Tg9WxQF/hoodle-nu.png"
+    },
+    {
+      "id": "7",
+      "title": "ZUMBA Crossbody Bag",
+      "price": 280000,
+      "description": "Wearing a sporty style suitable for active young people. Suitable for daily wear or participating in outdoor activities.",
+      "rating": {
+        "rate": 4.8
+      },
+      "category": "accessories",
+      "image": "https://i.ibb.co/d4krCD8/Tui-deo-cheo.png"
+    },
+    {
+      "id": "8",
+      "title": "Adidas caps",
+      "price": 450000,
+      "description": "There are adjustable straps at the back for a comfortable fit. The curved brim is always ready for you to put on your head.",
+      "rating": {
+        "rate": 4.4
+      },
+      "category": "accessories",
+      "image": "https://i.ibb.co/37Ztnv8/non-luoi-trai.png"
+    },
+    {
+      "id": "9",
+      "title": "UV-Proof Polarized Sunglasses",
+      "price": 459000,
+      "description": "The ultimate blend of style and protection. These sunglasses not only shield your eyes from harmful UV rays but also reduce glare for enhanced visual clarity. Stay fashionable and safeguarded with this essential accessory.",
+      "rating": {
+        "rate": 4.2
+      },
+      "category": "accessories",
+      "image": "https://i.ibb.co/BLgQpGw/kinh-ram.png"
+    },
+    {
+      "id": "10",
+      "title": "LA ROCHE-POSAY Sunscreen",
+      "price": 100000,
+      "description": "This dermatologist-tested formula provides broad-spectrum protection while being gentle on the skin. Stay protected and confident under the sun with LA ROCHE-POSAY Sunscreen.",
+      "rating": {
+        "rate": 3.9
+      },
+      "category": "accessories",
+      "image": "https://i.ibb.co/Gd3wn7c/kem-chong-nang.png"
+    },
+    {
+      "id": "11",
+      "title": "LOCK&LOCK neck pillow",
+      "price": 310000,
+      "description": "Its ergonomic design ensures a relaxing experience, whether on planes, trains, or road trips. Rest easy with LOCK&LOCK Neck Pillow.",
+      "rating": {
+        "rate": 3.1
+      },
+      "category": "accessories",
+      "image": "https://i.ibb.co/MPHRnq5/goi-ke-dau.png"
+    },
+    {
+      "id": "12",
+      "title": "Black suitcase",
+      "price": 1120000,
+      "description": "With its durable construction, ample storage space, and smooth-rolling wheels, this suitcase is perfect for any adventure. Stay organized and travel in style with our Black Suitcase.",
+      "rating": {
+        "rate": 3.4
+      },
+      "category": "accessories",
+      "image": "https://i.ibb.co/BrNV00B/black-suitcase.png"
+    },
+    {
+      "id": "13",
+      "title": "Mens Casual Premium Slim Fit T-Shirt",
+      "price": 459000,
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans.",
+      "rating": {
+        "rate": 3.8
+      },
+      "category": "men's clothing",
+      "image": "https://i.ibb.co/9vWz9bc/casual-t-shirt.jpg"
+    },
+    {
+      "id": "14",
+      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "price": 670000,
+      "description": "100% POLYURETHANE (shell) 100% POLYESTER (lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+      "rating": {
+        "rate": 4.9
+      },
+      "category": "women's clothing",
+      "image": "https://i.ibb.co/7gtydMR/moto-jacket.jpg"
+    },
+    {
+      "id": "15",
+      "title": "DANVOUY Womens T-Shirt Casual Cotton Short",
+      "price": 210000,
+      "description": "5% Cotton, 5% Spandex. Features: Casual, Short Sleeve, Letter Print, V-Neck, Fashion Tees. The fabric is soft and has some stretch.",
+      "rating": {
+        "rate": 4.6
+      },
+      "category": "women's clothing",
+      "image": "https://i.ibb.co/Cvy2tYS/casual-women.jpg"
+    },
+    {
+      "id": "16",
+      "title": "Women sunglasses",
+      "price": 230000,
+      "description": "Choose from a variety of shapes, colors, and lens options to find the perfect pair that complements your personal style and offers UV protection. Step out in confidence and style with our Women Sunglasses.",
+      "rating": {
+        "rate": 4.3
+      },
+      "category": "accessories",
+      "image": "https://i.ibb.co/BrCf0Sg/women-sunglasses.png"
+    },
+    {
+      "id": "17",
+      "title": "Men sport shoes",
+      "price": 790000,
+      "description": "Designed with advanced cushioning and breathability, these shoes provide optimal stability and responsiveness for your runs. Whether you're hitting the pavement or tackling the trails, our Men's Sport Shoes will elevate your running experience.",
+      "rating": {
+        "rate": 4.4
+      },
+      "category": "footwear",
+      "image": "https://i.ibb.co/0GrjYYK/men-sport-shoes.jpg"
+    },
+    {
+      "id": "18",
+      "title": "Women sport shoes",
+      "price": 790000,
+      "description": "Designed with comfort and performance in mind, these shoes offer excellent support, flexibility, and durability for all your athletic activities. Whether you're hitting the gym, going for a run, or practicing your favorite sport, our Women's Sport Shoes will keep you comfortable and confident.",
+      "rating": {
+        "rate": 4.6
+      },
+      "category": "footwear",
+      "image": "https://i.ibb.co/2qKj3Wj/women-sport-shoes.jpg"
+    },
+    {
+      "id": "19",
+      "title": "Beach slippers",
+      "price": 130000,
+      "description": "These slippers combine style and comfort, with a lightweight design and durable materials that are perfect for sandy beaches and water activities. Slip them on and enjoy your time by the shore with our Beach Slippers.",
+      "rating": {
+        "rate": 3.0
+      },
+      "category": "footwear",
+      "image": "https://i.ibb.co/Vmwyx0y/beach-slipper.jpg"
+    }
+  ]
+}
