@@ -18,16 +18,16 @@ const Products = () => {
       filter: "all",
     },
     {
-      text: "Men's clothing",
-      filter: "men's clothing",
+      text: "Beach",
+      filter: "beach",
     },
     {
-      text: "Women's clothing",
-      filter: "women's clothing",
+      text: "Hiking",
+      filter: "hiking",
     },
     {
-      text: "Footwear",
-      filter: "footwear",
+      text: "Cold",
+      filter: "cold",
     },
     {
       text: "Accessories",

@@ -26,7 +26,7 @@ const Register = () => {
     //     password: password,
     //   })
     // );
-    await axios.post('http://localhost:3001/authentication/sign-up', {
+    await axios.post('https://mudiem-be.onrender.com/authentication/sign-up', {
       fullName: name,
       username: email,
       password: password,

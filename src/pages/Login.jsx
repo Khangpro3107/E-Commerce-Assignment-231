@@ -9,7 +9,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const foundUser = await axios.post('http://localhost:3001/authentication/sign-in', {
+    const foundUser = await axios.post('https://mudiem-be.onrender.com/authentication/sign-in', {
       username: email,
       password,
     }).catch((error) => {
